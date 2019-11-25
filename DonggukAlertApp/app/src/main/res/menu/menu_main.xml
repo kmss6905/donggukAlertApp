@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/weather"
+        android:title="날씨"
+        app:showAsAction="always"
+        android:icon="@mipmap/outline_wb_sunny_black_24"/>
+
+    <group android:id="@+id/setting"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@mipmap/outline_info_black_24">
+
+        <item android:id="@+id/setting_setting"
+            android:title="설정"
+            app:showAsAction="never"/>
+
+        <item android:id="@+id/setting_like"
+            android:title="관심사 목록"
+            app:showAsAction="never"/>
+
+    </group>
+
+
+
+</menu>
