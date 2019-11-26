@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="동국대학교 날씨"
+        android:textColor="#FF5722"
+        android:textSize="35sp"></TextView>
+
+    <!--
+        <LinearLayout
+            android:layout_marginTop="20sp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Day"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_weight="1"
+                android:text="Day : "
+                android:textSize="15sp"></TextView>
+
+            <TextView
+                android:id="@+id/Condition"
+                android:layout_width="184dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_weight="1"
+                android:text="상태 : "
+                android:textSize="20sp"></TextView>
+        </LinearLayout> -->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20sp"
+        android:background="#FF5722"></View>
+
+    <LinearLayout
+
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="시간 "
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="기온"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="강수량"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="상태"
+            android:textColor="#000000"
+            android:textSize="20sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout1"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_1"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="3시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp1"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall1"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition1"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout2"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_2"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="6시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp2"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall2"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition2"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout3"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_3"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="9시"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp3"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall3"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition3"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout4"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_4"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="12시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp4"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall4"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition4"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout5"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_5"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="15시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp5"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall5"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition5"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout6"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_6"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="18시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp6"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall6"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition6"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout7"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_7"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="21시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp7"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall7"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition7"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout8"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hour_8"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="24시 "
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/temp8"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10℃"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/rainfall8"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="10%"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:id="@+id/condition8"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            android:text="맑음"
+            android:textColor="#000000"
+            android:textSize="15sp"></TextView>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

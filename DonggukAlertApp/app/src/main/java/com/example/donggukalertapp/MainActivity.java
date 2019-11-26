@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,10 @@ import com.example.donggukalertapp.Fragment.EventNoticeFragment;
 import com.example.donggukalertapp.Fragment.GeneralNoticeFragment;
 import com.example.donggukalertapp.Fragment.InternationalNoticeFragment;
 import com.example.donggukalertapp.Fragment.ScholarshipNoticeFragment;
+import com.example.donggukalertapp.Setting.AddwordActivity;
+import com.example.donggukalertapp.Whether.AirPollutionActivity;
+import com.example.donggukalertapp.Whether.ShortWeather;
+import com.example.donggukalertapp.Whether.ShortWeatherActivity;
 import com.google.android.material.tabs.TabLayout;
 
 /**
@@ -81,10 +86,22 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.weather: // 날씨 클릭
+                Intent intent1 = new Intent(getApplicationContext(), ShortWeatherActivity.class);
+                startActivity(intent1);
                 break;
 
-            case R.id.setting: // 설정 클릭
+            case R.id.air_poll: // 대기오염 클릭
+                Intent intent = new Intent(getApplicationContext(), AirPollutionActivity.class);
+                startActivity(intent);
                 break;
+
+            case R.id.setting_like: // 관심사 목록
+                Intent intent2 = new Intent(getApplicationContext(), AddwordActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.setting_setting: // 설정
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

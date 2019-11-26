@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity">
-        </activity>
+        <activity android:name=".Setting.AddwordActivity"></activity>
+        <activity android:name=".Whether.ShortWeatherActivity" />
+        <activity android:name=".Whether.AirPollutionActivity" />
+        <activity android:name=".Main2Activity" />
         <activity android:name=".ContentAcitivty" />
         <activity android:name=".MainActivity">
             <intent-filter>

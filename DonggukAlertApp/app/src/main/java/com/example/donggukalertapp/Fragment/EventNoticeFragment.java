@@ -130,6 +130,7 @@ public class EventNoticeFragment extends Fragment implements SwipeRefreshLayout.
         protected void onPreExecute() {
             //진행다일로그 시작 ( 커스텀해보자 )
             progressDialog = new ProgressDialog(getActivity());
+            Log.d(TAG, "onPreExecute:  발동 ");
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.setMessage("잠시 기다려 주세요.");
             progressDialog.show();

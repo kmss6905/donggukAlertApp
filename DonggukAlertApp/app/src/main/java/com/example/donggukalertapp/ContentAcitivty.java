@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import android.webkit.URLUtil;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.donggukalertapp.Adapter.PagerAdapter;
@@ -30,6 +32,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.sufficientlysecure.htmltextview.HtmlHttpImageGetter;
+import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -44,11 +48,15 @@ public class ContentAcitivty extends AppCompatActivity {
     private WebView mWebView; // 웹 뷰
     private WebSettings mWebSettings; // 웹뷰 세팅
     private Intent intent;
+    private HtmlTextView html_text;
+
+    Element textElement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_acitivty);
+        html_text = findViewById(R.id.html_text);
 
         // 전 목록화면에서 데이터 가져와야함
         intent = getIntent();
@@ -176,6 +184,9 @@ public class ContentAcitivty extends AppCompatActivity {
             try {
                 Connection.Response execute = Jsoup.connect("https://www.dongguk.edu/mbs/kr/jsp/board/" + intent.getStringExtra("url")).execute();
                 Document document = Jsoup.parse(execute.body());
+                textElement = document.getElementById("divView");
+                Log.d(TAG, "doInBackground: " + textElement);
+
                 Elements elements = document.select("tr.bottom_line td");
                 for(Element element : elements){
                     for(String str : element.getElementsByTag("a").eachText()){
@@ -188,7 +199,7 @@ public class ContentAcitivty extends AppCompatActivity {
                     for(String str : element.getElementsByTag("a").eachAttr("onclick")){
 //                        Log.d(TAG, "doInBackground: 내부 경로" + str);
                         String[] strArray = str.split("'");
-                        Log.d(TAG, "doInBackground: 내부 경로 : https://www.dongguk.edu/mbs/kr/jsp/board" +  strArray[1]);
+                        Log.d(TAG, "doInBackground: 내부 경로 : https://www.dongguk.edu" +  strArray[1]);
                     }
 
                 }
@@ -201,6 +212,14 @@ public class ContentAcitivty extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+
+            html_text.setHtml(textElement.toString(),new HtmlHttpImageGetter(html_text,null,true));
+
+            // contains를 이용한 방법(true, false 반환)
+            if(html_text.toString().contains("placeholder"))
+                System.out.println("문자열 있음!");
+            else
+                System.out.println("문자열 없음!");
         }
     }
 }
