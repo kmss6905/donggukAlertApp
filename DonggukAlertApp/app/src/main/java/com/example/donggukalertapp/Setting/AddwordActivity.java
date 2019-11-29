@@ -2,14 +2,19 @@ package com.example.donggukalertapp.Setting;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,17 +28,20 @@ import com.example.donggukalertapp.R;
 import com.example.donggukalertapp.Whether.AirPollutionActivity;
 import com.example.donggukalertapp.Whether.ShortWeatherActivity;
 
+import org.w3c.dom.Text;
+
+import java.sql.Array;
 import java.util.LinkedList;
 
 public class AddwordActivity extends AppCompatActivity {
+    private static final String TAG = "AddwordActivity";
 
-    TextView[] keyword = new TextView[10];
+
     EditText insertKeyWord;
-    LinearLayout layout;
     Button btnDelete;
     SharedPreferences settings;
     SharedPreferences.Editor editor;
-    int toggle;
+    int toggle; // 삭제버튼 눌렀는지 판별
     int count;
 
     // 리스트뷰 추가
@@ -44,49 +52,47 @@ public class AddwordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addword);
-
-        getSupportActionBar().setTitle("관심사목록");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        init();
-        delete();
+        init(); //변수 선언 메소드
+        delete(); // 단어 삭제 메소드
     }
 
     //단어 추가
-    public void addKeyWord(View v){
-        int a = 0;
+    public void addKeyWord(View v){ // 단어 추가
+        int a = 0; // 목록에 입력한 단어와 중복되면 1, 중복 안되면 0으로 판단, 버튼 누를 때마다 0으로 초기화
         String getKeyword = insertKeyWord.getText().toString();
         getKeyword = getKeyword.trim();
         if(getKeyword.getBytes().length <= 0){
             Toast.makeText(getApplicationContext(), "단어를 입력해주세요", Toast.LENGTH_SHORT).show();
         } else {
             if (count == 0) {
-                count++;
-                keyword[count].setText(getKeyword);
-                keywordList.add(keyword[count].getText().toString());
-                mAdapter.notifyDataSetChanged();
+                count++;   // keyword1 ~ keyword5 : 총 5개
+                editor.putString("count", Integer.toString(count));
                 editor.putString("keyword" + count, getKeyword);
-                editor.commit();
+                editor.commit(); // 입력한 단어 쉐어드에 저장 : keyword1
+                keywordList.add(settings.getString("keyword"+count, "")); // 리스트뷰에 추가
+                mAdapter.notifyDataSetChanged();
                 insertKeyWord.setText("");
-            } else if (count > 0 && count <= 5) {
+            } else if (count > 0 && count < 5) {
                 count++;
-                keyword[count].setText(getKeyword);
-                for (int i = 1; i < count; i++) {
-                    if (keyword[i].getText().toString().equals(keyword[count].getText().toString())) {
+                editor.putString("keyword" + count, getKeyword);
+                for (int i = 1; i < count; i++) { // 입력한 단어가 목록에 있는지 중복 검사
+                    if (settings.getString("keyword"+i, "").equals(getKeyword)) {
                         Toast.makeText(getApplicationContext(), "이미 추가하신 관심사입니다", Toast.LENGTH_SHORT).show();
                         insertKeyWord.setText("");
-                        a = 1;
+                        count--;
+                        a = 1; // 중복되었을 때  a= 1 , 중복 안되면 a=0 이므로 밑의 코드로 이동
                     }
                 }
                 if (a == 0) {
-                    keywordList.add( keyword[count].getText().toString());
-                    mAdapter.notifyDataSetChanged();
                     editor.putString("keyword" + count, getKeyword);
-                    editor.commit();
+                    editor.putString("count", Integer.toString(count));
+                    editor.commit(); // 쉐어드에 저장
+                    keywordList.add(settings.getString("keyword"+count, "")); // 리스트뷰에 추가
+                    mAdapter.notifyDataSetChanged();
                     insertKeyWord.setText("");
                 }
-            } else if (count > 5) {
-                keyword[count].setText("");
+            } else if (count > 4) {  // 단어가 5개 넘어가는 경우
+                //keyword[count].setText("");
                 Toast.makeText(getApplicationContext(), "최대 5개까지 등록 가능합니다.", Toast.LENGTH_SHORT).show();
                 insertKeyWord.setText("");
             }
@@ -96,21 +102,19 @@ public class AddwordActivity extends AppCompatActivity {
     //단어 삭제
     public void deleteKeyword(View v) {
         if (count > 0) {
-            if (toggle == 0) { //삭제를 하려는 경우
-                //keyword[i] , shared 초기화
-                for(int i = 1; i <= count ; i++){
-                    keyword[i].setText("");
-                    editor.putString("keyword" + i, "");
-                }
+            if (toggle == 0) { //삭제 시작한 경우
+                editor.clear();
+                editor.commit(); // 쉐어드 내용 전부 초기화
                 toggle = 1;
                 btnDelete.setText("완료");
                 Toast.makeText(getApplicationContext(), "삭제할 단어를 누르고 완료버튼을 눌러주세요!", Toast.LENGTH_LONG).show();
             } else if(toggle ==1 ) { // 삭제 완료한 경우
-                //다시 넣어주기
                 for(int i = 1; i <= count ; i++){
-                    keyword[i].setText(keywordList.get(i));
-                    editor.putString("keyword" + i, keywordList.get(i));
+                    editor.putString("keyword" + i, mAdapter.getItem(i-1));
+                    editor.commit();
                 }
+                editor.putString("count", Integer.toString(count));
+                editor.commit(); // 다시 값 넣어주기
                 toggle = 0;
                 Toast.makeText(getApplicationContext(), "삭제가 완료되었습니다", Toast.LENGTH_LONG).show();
                 btnDelete.setText("삭제");
@@ -135,31 +139,26 @@ public class AddwordActivity extends AppCompatActivity {
                         keywordList.remove(position);
                         mAdapter.notifyDataSetChanged();
                         count--;
+                        editor.putString("count", Integer.toString(count));
+                        editor.commit();
                 }
             }
         });
     }
 
-    public void show(View v){
-
-        for(int i =1 ; i <= count; i++){
-            keywordList.add(settings.getString("keyword"+i,""));
-            mAdapter.notifyDataSetChanged();
-        }
-    }
+//    public void show(View view){ // 저장된 거 확인하는 코드
+//        for(int i = 1; i <=count; i ++){
+//            keywordList.add(settings.getString("keyword"+i, ""));
+//            mAdapter.notifyDataSetChanged();
+//        }
+//        keywordList.add(settings.getString("count", ""));
+//    }
 
     //변수 선언
     public void init(){
         insertKeyWord = (EditText)findViewById(R.id.insertKeyword);
-        keyword = new TextView[7];
         btnDelete = (Button)findViewById(R.id.deleteButton);
 
-
-        for(int i = 1; i <7; i ++){
-            keyword[i] = new TextView(this);
-            keyword[i].setTextSize(30);
-            keyword[i].setTextColor(Color.BLACK);
-        }
         count = 0;
         toggle = 0;
         settings = getSharedPreferences("Keyword", 0);
@@ -170,7 +169,10 @@ public class AddwordActivity extends AppCompatActivity {
         keywordList = new LinkedList<>();
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,keywordList);
         mListView.setAdapter(mAdapter);
+
+
     }
+
 
     // 옵션 메뉴
     @Override
@@ -200,14 +202,24 @@ public class AddwordActivity extends AppCompatActivity {
                 break;
 
             case R.id.setting_like:
-
-                break;
-
-            case android.R.id.home: // 뒤로가기
-                finish();
-                break;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0); // 액티비티 전환효과 없앰
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences sharedPreferences = getSharedPreferences("Keyword", MODE_PRIVATE);
+        String count = sharedPreferences.getString("count","");
+        Log.d(TAG, "onStop: count : " + count);
+        for(int i = 1; i <= Integer.parseInt(count); i++){
+            Log.d(TAG, "onStop: " + i + " 번쨰 " + sharedPreferences.getString("keyword"+i,""));
+        }
+    }
 }

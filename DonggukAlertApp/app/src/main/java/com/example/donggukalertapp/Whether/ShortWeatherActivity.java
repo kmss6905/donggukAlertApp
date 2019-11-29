@@ -1,14 +1,10 @@
 package com.example.donggukalertapp.Whether;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.donggukalertapp.R;
 import com.squareup.okhttp.OkHttpClient;
@@ -24,44 +20,33 @@ import java.util.ArrayList;
 
 public class ShortWeatherActivity extends AppCompatActivity {
 
-    //TextView textView_shortWeather;
-
-    TextView textView_day, textView_condition, textView_rainfall, textView_ozonzisu, textView_pm10value, textView_pm25value;
-    TextView textView_hour_1,textView_temp1, textView_hour_2, textView_temp2, textView_hour_3, textView_temp3, textView_hour_4, textView_temp4, textView_hour_5, textView_temp5, textView_hour_6, textView_temp6, textView_hour_7, textView_temp7, textView_hour_8, textView_temp8;
-    TextView textView_rainfall_1, textView_rainfall_2, textView_rainfall_3, textView_rainfall_4, textView_rainfall_5, textView_rainfall_6, textView_rainfall_7, textView_rainfall_8;
+    TextView textView_hour_1, textView_hour_2,  textView_hour_3,  textView_hour_4,  textView_hour_5,  textView_hour_6,  textView_hour_7,  textView_hour_8;
+    TextView textView_temp1, textView_temp2,textView_temp3, textView_temp4, textView_temp5, textView_temp6, textView_temp7, textView_temp8;
     TextView textView_condition_1, textView_condition_2, textView_condition_3, textView_condition_4, textView_condition_5, textView_condition_6, textView_condition_7, textView_condition_8;
-
+    TextView textView_rainfall_1, textView_rainfall_2, textView_rainfall_3, textView_rainfall_4, textView_rainfall_5, textView_rainfall_6, textView_rainfall_7, textView_rainfall_8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_short_weather);
-/*
-        textView_day = (TextView)findViewById(R.id.Day); textView_condition = (TextView)findViewById(R.id.Condition); textView_rainfall = (TextView)findViewById(R.id.rainfall);
-        textView_ozonzisu = (TextView)findViewById(R.id.ozonzisu); textView_pm10value = (TextView)findViewById(R.id.pm10value); textView_pm25value = (TextView)findViewById(R.id.pm25value);
-*/
 
-        this.getSupportActionBar().setTitle("날씨정보");
-        //액션바 뒤로가기 버튼 추가
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        textView_hour_1 = (TextView)findViewById(R.id.hour_1);
+        textView_hour_2 = (TextView)findViewById(R.id.hour_2);
+        textView_hour_3 = (TextView)findViewById(R.id.hour_3);
+        textView_hour_4 = (TextView)findViewById(R.id.hour_4);
+        textView_hour_5 = (TextView)findViewById(R.id.hour_5);
+        textView_hour_6 = (TextView)findViewById(R.id.hour_6);
+        textView_hour_7 = (TextView)findViewById(R.id.hour_7);
+        textView_hour_8 = (TextView)findViewById(R.id.hour_8);
 
-        textView_hour_1 = (TextView)findViewById(R.id.hour_1); textView_temp1 = (TextView)findViewById(R.id.temp1);
-        textView_hour_2 = (TextView)findViewById(R.id.hour_2); textView_temp2 = (TextView)findViewById(R.id.temp2);
-        textView_hour_3 = (TextView)findViewById(R.id.hour_3); textView_temp3 = (TextView)findViewById(R.id.temp3);
-        textView_hour_4 = (TextView)findViewById(R.id.hour_4); textView_temp4 = (TextView)findViewById(R.id.temp4);
-        textView_hour_5 = (TextView)findViewById(R.id.hour_5); textView_temp5 = (TextView)findViewById(R.id.temp5);
-        textView_hour_6 = (TextView)findViewById(R.id.hour_6); textView_temp6 = (TextView)findViewById(R.id.temp6);
-        textView_hour_7 = (TextView)findViewById(R.id.hour_7); textView_temp7 = (TextView)findViewById(R.id.temp7);
-        textView_hour_8 = (TextView)findViewById(R.id.hour_8); textView_temp8 = (TextView)findViewById(R.id.temp8);
-
-        textView_rainfall_1 = (TextView)findViewById(R.id.rainfall1);
-        textView_rainfall_2 = (TextView)findViewById(R.id.rainfall2);
-        textView_rainfall_3 = (TextView)findViewById(R.id.rainfall3);
-        textView_rainfall_4 = (TextView)findViewById(R.id.rainfall4);
-        textView_rainfall_5 = (TextView)findViewById(R.id.rainfall5);
-        textView_rainfall_6 = (TextView)findViewById(R.id.rainfall6);
-        textView_rainfall_7 = (TextView)findViewById(R.id.rainfall7);
-        textView_rainfall_8 = (TextView)findViewById(R.id.rainfall8);
+        textView_temp1 = (TextView)findViewById(R.id.temp1);
+        textView_temp2 = (TextView)findViewById(R.id.temp2);
+        textView_temp3 = (TextView)findViewById(R.id.temp3);
+        textView_temp4 = (TextView)findViewById(R.id.temp4);
+        textView_temp5 = (TextView)findViewById(R.id.temp5);
+        textView_temp6 = (TextView)findViewById(R.id.temp6);
+        textView_temp7 = (TextView)findViewById(R.id.temp7);
+        textView_temp8 = (TextView)findViewById(R.id.temp8);
 
         textView_condition_1 = (TextView)findViewById(R.id.condition1);
         textView_condition_2 = (TextView)findViewById(R.id.condition2);
@@ -72,7 +57,14 @@ public class ShortWeatherActivity extends AppCompatActivity {
         textView_condition_7 = (TextView)findViewById(R.id.condition7);
         textView_condition_8 = (TextView)findViewById(R.id.condition8);
 
-        //textView_shortWeather = (TextView)findViewById(R.id.shortWeather);
+        textView_rainfall_1 = (TextView)findViewById(R.id.rainfall1);
+        textView_rainfall_2 = (TextView)findViewById(R.id.rainfall2);
+        textView_rainfall_3 = (TextView)findViewById(R.id.rainfall3);
+        textView_rainfall_4 = (TextView)findViewById(R.id.rainfall4);
+        textView_rainfall_5 = (TextView)findViewById(R.id.rainfall5);
+        textView_rainfall_6 = (TextView)findViewById(R.id.rainfall6);
+        textView_rainfall_7 = (TextView)findViewById(R.id.rainfall7);
+        textView_rainfall_8 = (TextView)findViewById(R.id.rainfall8);
 
         new ReceiveShortWeather().execute();
     }
@@ -107,21 +99,10 @@ public class ShortWeatherActivity extends AppCompatActivity {
 
             String hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8 = "";
             String temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8 = "";
-            String rf1,rf2,rf3,rf4,rf5,rf6,rf7,rf8 = "";
             String cd1,cd2,cd3,cd4,cd5,cd6,cd7,cd8 = "";
+            String rf1,rf2,rf3,rf4,rf5,rf6,rf7,rf8 = "";
 
-
-            //shortWeathers.size()
-
-            /*for(int i=0; i<8; i++) {
-                data += shortWeathers.get(i).getHour() + "" + "시" + "          " + //시간
-                        shortWeathers.get(i).getDay() + "" + "일" + "          " +// day, 현재 day:0
-                        shortWeathers.get(i).getTemp() + "" + "℃" + "          " +// 온도
-                        shortWeathers.get(i).getWfKor() + "" + "          " +// 상태
-                        shortWeathers.get(i).getPop() + "%" + "\n"; //강수확률
-            }*/
-
-            /////////////////////////////////////////////
+            //////////////////////////////////////////////
 
             hour1 = shortWeathers.get(0).getHour() + "시";
             textView_hour_1.setText(hour1);
@@ -240,7 +221,6 @@ public class ShortWeatherActivity extends AppCompatActivity {
             try {
                 String tagName = "";
                 boolean onHour = false;
-                boolean onDay = false;
                 boolean onTem = false;
                 boolean onWfKor = false;
                 boolean onPop = false;
@@ -268,10 +248,6 @@ public class ShortWeatherActivity extends AppCompatActivity {
                             shortWeathers.get(i).setHour(parser.getText());
                             onHour = true;
                         }
-                        if (tagName.equals("day") && !onDay) {
-                            shortWeathers.get(i).setDay(parser.getText());
-                            onDay = true;
-                        }
                         if (tagName.equals("temp") && !onTem) {
                             shortWeathers.get(i).setTemp(parser.getText());
                             onTem = true;
@@ -284,11 +260,11 @@ public class ShortWeatherActivity extends AppCompatActivity {
                             shortWeathers.get(i).setPop(parser.getText());
                             onPop = true;
                         }
+
                     } else if (eventType == XmlPullParser.END_TAG) {
                         if (tagName.equals("s06") && onEnd == false) {
                             i++;
                             onHour = false;
-                            onDay = false;
                             onTem = false;
                             onWfKor = false;
                             onPop = false;
@@ -296,47 +272,11 @@ public class ShortWeatherActivity extends AppCompatActivity {
                             onEnd = true;
                         }
                     }
-
                     eventType = parser.next();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-    }
-
-    // 옵션 메뉴
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    // 메뉴 클릭
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.weather: // 날씨 클릭
-                Intent intent1 = new Intent(getApplicationContext(), ShortWeatherActivity.class);
-                startActivity(intent1);
-                break;
-
-            case R.id.air_poll: // 대기오염 클릭
-                Intent intent = new Intent(getApplicationContext(), AirPollutionActivity.class);
-                startActivity(intent);
-                break;
-
-            case R.id.setting: // 설정 클릭
-                break;
-
-            case android.R.id.home: // 뒤로가기
-                finish();
-                break;
-
-
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

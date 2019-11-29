@@ -1,0 +1,66 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 키워드 알림 -->
+    <PreferenceCategory app:title="@string/board_notice_header"
+        app:layout="@layout/preferences_category">
+
+        <SwitchPreferenceCompat
+            app:key="keyword"
+            app:summaryOff="@string/attachemt_board_notice_title_keyword_off"
+            app:summaryOn="@string/attachemt_board_notice_title_keyword_on"
+            app:title="@string/board_notice_title_keyword"
+            app:enabled="true"
+            app:defaultValue="true"/>
+
+        <SwitchPreferenceCompat
+            app:key="keyword_all"
+            app:summaryOff="@string/attachemt_board_notice_title_all_summary_off"
+            app:summaryOn="@string/attachemt_board_notice_title_all_summary_on"
+            app:title="@string/board_notice_title_all"
+            app:enabled="true"
+            app:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/weather_notice_header"
+        app:layout="@layout/preferences_category">
+        <SwitchPreferenceCompat
+            app:key="weather"
+            app:title="@string/weather_notice_title"
+            app:summaryOff="@string/attachemt_weather_notice_title_keyword_off"
+            app:summaryOn="@string/attachemt_weather_notice_title_keyword_on"
+            app:enabled="true"
+            app:defaultValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/version_information_header"
+        app:layout="@layout/preferences_category">
+        <Preference
+            app:title="@string/version_information_title"
+            app:summary="@string/version_information_title_summary"/>
+
+
+
+    </PreferenceCategory>
+
+
+
+
+
+</PreferenceScreen>

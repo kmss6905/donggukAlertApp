@@ -33,7 +33,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="학사공지 : 아무나 들어가는 테스트~~"
-                    android:fontFamily="@font/yangjin_v09_ttf"/>
+                    android:fontFamily="@font/yangjin_v09_ttf"
+                    android:textColor="@android:color/black"/>
 
 
             </LinearLayout>
@@ -52,7 +53,8 @@
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2019 - 11 - 20" />
+                android:text="2019 - 11 - 20"
+                android:textColor="@android:color/black"/>
 
             <ImageView
                 android:id="@+id/newImg"

@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">동국대알림(v1.0)</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_id_weather" translatable="false">fcm_default_channel_weather</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <!-- 현재 3개의 카테고리가 있음 -->>
+    <string name="board_notice_header">게시물 알림 설정</string>
+    <string name="weather_notice_header">날씨 알림 설정</string>
+    <string name="version_information_header">앱 정보</string>
+
+
+    <!-- 게시물 알림 카테고리 -->
+    <string name="board_notice_title_keyword">키워드 알림</string>
+    <string name="attachemt_board_notice_title_keyword_on">입력한 키워드에 대한 알림메시지를 받습니다</string>
+    <string name="attachemt_board_notice_title_keyword_off">키워드 알림메시지를 받지 않습니다</string>
+
+
+    <string name="board_notice_title_all">전체 알림</string>
+    <string name="attachemt_board_notice_title_all_summary_on">모든 알림을 받습니다</string>
+    <string name="attachemt_board_notice_title_all_summary_off">모든 알림을 받지 않습니다</string>
+
+
+    <!-- 날씨 알림 카테고리-->
+    <string name="weather_notice_title">날씨 알림</string>
+    <string name="attachemt_weather_notice_title_keyword_on">매일 아침 7시 동국대학교의 날씨알람을 받습니다</string>
+    <string name="attachemt_weather_notice_title_keyword_off">날씨 알람을 받지 않음</string>
+
+    <!-- 앱 정보 카테고리 -->
+    <string name="version_information_title">버전정보</string>
+    <string name="version_information_title_summary">1.0 ( 2019 . 11 . 29)</string>
+
 </resources>

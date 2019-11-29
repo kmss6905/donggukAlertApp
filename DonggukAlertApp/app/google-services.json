@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "412502079655",
+    "firebase_url": "https://douguk-alarm.firebaseio.com",
+    "project_id": "douguk-alarm",
+    "storage_bucket": "douguk-alarm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412502079655:android:440e0a3425e86250b04382",
+        "android_client_info": {
+          "package_name": "com.example.donggukalertapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412502079655-bh7cgeb2e7ltv9vjjd08l2mlc34mi1hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVskTuXaUscTurLOwUZrqRW0xMeZSo2YQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412502079655-bh7cgeb2e7ltv9vjjd08l2mlc34mi1hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412502079655:android:5273fe6c8d267308b04382",
+        "android_client_info": {
+          "package_name": "com.example.fcm_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412502079655-bh7cgeb2e7ltv9vjjd08l2mlc34mi1hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVskTuXaUscTurLOwUZrqRW0xMeZSo2YQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412502079655-bh7cgeb2e7ltv9vjjd08l2mlc34mi1hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

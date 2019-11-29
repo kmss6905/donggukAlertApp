@@ -1,45 +1,34 @@
 package com.example.donggukalertapp.Whether;
 
 public class ShortWeather {
+
     private String hour;  // 시간
-    private String day; // 날, 오늘 day:0
-    private String temp;  // 온도
+    private String temp;  // 기온
     private String wfKor; // 상태
     private String pop; // 강수확률
-    private String reh; // 습도
-    private String tmx;
-    private String tmn;
 
-    public String getTmx() {
-        return tmx;
+    public String getHour() {
+        return hour;
     }
 
-    public void setTmx(String tmx) {
-        this.tmx = tmx;
+    public void setHour(String hour) {
+        this.hour = hour;
     }
 
-    public String getTmn() {
-        return tmn;
+    public String getTemp() {
+        return temp;
     }
 
-    public void setTmn(String tmn) {
-        this.tmn = tmn;
+    public void setTemp(String temp) {
+        this.temp = temp;
     }
 
-    public String getDay() {
-        return day;
+    public String getWfKor() {
+        return wfKor;
     }
 
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    public String getReh() {
-        return reh;
-    }
-
-    public void setReh(String reh) {
-        this.reh = reh;
+    public void setWfKor(String wfKor) {
+        this.wfKor = wfKor;
     }
 
     public String getPop() {
@@ -50,28 +39,6 @@ public class ShortWeather {
         this.pop = pop;
     }
 
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
-
-    public void setTemp(String temp) {
-        this.temp = temp;
-    }
-
-    public void setWfKor(String wfKor) {
-        this.wfKor = wfKor;
-    }
-
-    public String getHour() {
-        return hour;
-    }
-
-    public String getTemp() {
-        return temp;
-    }
-
-    public String getWfKor() {
-        return wfKor;
-    }
 }
+
 
