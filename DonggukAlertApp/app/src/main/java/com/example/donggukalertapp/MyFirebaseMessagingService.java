@@ -60,14 +60,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                      *  만약 저장된 값이 하나도 없으면 ? 모든 알람 다 보냄
                      *  저장된 값이 하나라도 있으면 그것에 대한 것만 보냄
                      */
-                     SharedPreferences sharedPreferences_addword = getSharedPreferences("Keyword", MODE_PRIVATE);
+                    SharedPreferences sharedPreferences_addword = getSharedPreferences("Keyword", MODE_PRIVATE);
                     if(sharedPreferences_addword.getString("count","").equals("")){ // 아무것도 없으면
 
                     }else{
-                        String count = sharedPreferences_addword.getString("count", "");
+                        int count = sharedPreferences_addword.getInt("count", 0);
                         ArrayList<String> strings = new ArrayList<>();
 
-                        for(int i = 1; i <= Integer.parseInt(count); i++) {
+                        for(int i = 1; i <= count; i++) {
                             strings.add(sharedPreferences_addword.getString("keyword" + i,""));
                         }
 
@@ -84,7 +84,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                                 break;
                             case 2:
                                 if(remoteMessage.getData().get("content").contains(strings.get(0))
-                                    || remoteMessage.getData().get("content").contains(strings.get(1))
+                                        || remoteMessage.getData().get("content").contains(strings.get(1))
                                 ) {
                                     Log.d(TAG, "onMessageReceived: 비교중 ");
                                     sendNotification(
@@ -164,12 +164,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
 
-
-
-
-
-
-
 //        if(remoteMessage.getNotification() != null){
 //            String title = remoteMessage.getData().get("title");
 //            String body = remoteMessage.getData().get("content");
@@ -238,6 +232,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         .setDefaults(Notification.DEFAULT_ALL) // 알림, 사운드 진동 설정
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .setSound(defaultSoundUri)
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText(messageBody))
                         .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -245,7 +240,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Since android Oreo notification channel is needed.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(channelId,
-                    "동국대 게시물알람",
+                    "동국대 너만알람",
                     NotificationManager.IMPORTANCE_HIGH);
             channel.setImportance(NotificationManager.IMPORTANCE_HIGH);
             channel.enableLights(true);
@@ -278,6 +273,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         .setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_ALL) // 알림, 사운드 진동 설정
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText(messageBody))
                         .setSound(defaultSoundUri)
                         .setContentIntent(pendingIntent);
 
@@ -286,7 +282,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Since android Oreo notification channel is needed.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(channelId,
-                    "동국대 날씨알람",
+                    "동국대 너만알람",
                     NotificationManager.IMPORTANCE_HIGH);
             channel.setImportance(NotificationManager.IMPORTANCE_HIGH);
             channel.enableLights(true);

@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
             notificationManager.createNotificationChannels(chans);
 
-
 //
 //            // Create channel to show notifications.
 //            String channelId  = getString(R.string.default_notification_channel_id);
@@ -103,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         // [END handle_data_extras]
+
 
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
@@ -179,6 +179,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreatePreferences: keyword_all : " + keyword_all);
         Boolean weather = sharedPreferences.getBoolean("weather", true);
         Log.d(TAG, "onCreatePreferences: weather : " + weather);
+
+        SharedPreferences sharedPreferences_key = getSharedPreferences("Keyword", MODE_PRIVATE);
+        int count = sharedPreferences_key.getInt("count",0);
+        Log.d(TAG, "onStop: count : " + count);
+        for(int i = 1; i <= count; i++){
+            Log.d(TAG, "onStop: " + i + " 번쨰 " + sharedPreferences.getString("keyword"+i,""));
+        }
+
 
 
     }
