@@ -61,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                      *  저장된 값이 하나라도 있으면 그것에 대한 것만 보냄
                      */
                     SharedPreferences sharedPreferences_addword = getSharedPreferences("Keyword", MODE_PRIVATE);
-                    if(sharedPreferences_addword.getString("count","").equals("")){ // 아무것도 없으면
+                    if(sharedPreferences_addword.getInt("count",0)==0){ // 아무것도 없으면
 
                     }else{
                         int count = sharedPreferences_addword.getInt("count", 0);
