@@ -179,11 +179,10 @@ public class AddwordActivity extends AppCompatActivity {
         settings = getSharedPreferences("Keyword", 0);
         editor = settings.edit();
 
-        if(settings.getBoolean("firstCheck", false) == true){ // 이전에 저장된 값이 있을 때
+//        if(settings.getBoolean("firstCheck", false) == true){ // 이전에 저장된 값이 있을 때
             count = settings.getInt("count", 0);
-        }else {  // 앱을 처음 시작했을 때
-            count = 0;
-        }
+            Log.d(TAG, "init: 확인 1 : " + count);
+
 
         //listview
         mListView = (ListView)findViewById(R.id.listView);
