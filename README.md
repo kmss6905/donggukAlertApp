@@ -2,16 +2,16 @@
 
 
 ## version
-1i.0
+1.0
 
 ## screenshot
 
 <div>
-<img src="https://user-images.githubusercontent.com/43781484/70991123-358c5400-210a-11ea-8d57-5ce60a66eaa9.jpg">
-<img src="https://user-images.githubusercontent.com/43781484/70991121-358c5400-210a-11ea-97b8-a2ada0cdc166.jpg">
-<img src="https://user-images.githubusercontent.com/43781484/70991120-34f3bd80-210a-11ea-80bb-3a5b6599c911.jpg">
-<img src="https://user-images.githubusercontent.com/43781484/70991122-358c5400-210a-11ea-8e14-9402819a9f32.jpg">
-<img src="https://user-images.githubusercontent.com/43781484/70991124-358c5400-210a-11ea-904a-03a019f41b1c.jpg">
+<img width="200" src="https://user-images.githubusercontent.com/43781484/70991123-358c5400-210a-11ea-8d57-5ce60a66eaa9.jpg">
+<img width="200" src="https://user-images.githubusercontent.com/43781484/70991121-358c5400-210a-11ea-97b8-a2ada0cdc166.jpg">
+<img width="200" src="https://user-images.githubusercontent.com/43781484/70991120-34f3bd80-210a-11ea-80bb-3a5b6599c911.jpg">
+<img width="200" src="https://user-images.githubusercontent.com/43781484/70991122-358c5400-210a-11ea-8e14-9402819a9f32.jpg">
+<img width="200" src="https://user-images.githubusercontent.com/43781484/70991124-358c5400-210a-11ea-904a-03a019f41b1c.jpg">
 
 </div>
 
