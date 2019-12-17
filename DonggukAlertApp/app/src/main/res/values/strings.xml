@@ -9,6 +9,7 @@
     <string name="board_notice_header">게시물 알림 설정</string>
     <string name="weather_notice_header">날씨 알림 설정</string>
     <string name="version_information_header">앱 정보</string>
+    <string name="license_information">라이센스 고지</string>
 
 
     <!-- 게시물 알림 카테고리 -->
@@ -30,5 +31,9 @@
     <!-- 앱 정보 카테고리 -->
     <string name="version_information_title">버전정보</string>
     <string name="version_information_title_summary">1.0 ( 2019 . 11 . 29)</string>
+
+    <string name="apache_license_link">https://www.apache.org/licenses/LICENSE-2.0</string>
+    <string name="mit_license_link">https://opensource.org/licenses/MIT</string>
+
 
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.donggukalertapp">
+    package="com.dongguk.donggukalertapp">
 
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 웹뷰 다운로드 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="com.dongguk.donggukalertapp.LicenseInfoActivity"></activity>
         <activity
-            android:name=".SplashActivity"
+            android:name="com.dongguk.donggukalertapp.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Setting.SettingsActivity"
+            android:name="com.dongguk.donggukalertapp.Setting.SettingsActivity"
             android:label="@string/title_activity_settings" /> <!-- [START fcm_default_channel] -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
@@ -31,19 +32,19 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id_weather"
             android:value="@string/default_notification_channel_id_weather" /> <!-- [END fcm_default_channel] -->
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name="com.dongguk.donggukalertapp.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <activity android:name=".Setting.AddwordActivity" />
-        <activity android:name=".Whether.ShortWeatherActivity" />
-        <activity android:name=".Whether.AirPollutionActivity" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".ContentAcitivty" />
-        <activity android:name=".MainActivity">
-        </activity>
+
+        <activity android:name="com.dongguk.donggukalertapp.Setting.AddwordActivity" />
+        <activity android:name="com.dongguk.donggukalertapp.Whether.ShortWeatherActivity" />
+        <activity android:name="com.dongguk.donggukalertapp.Whether.AirPollutionActivity" />
+        <activity android:name="com.dongguk.donggukalertapp.Main2Activity" />
+        <activity android:name="com.dongguk.donggukalertapp.ContentAcitivty" />
+        <activity android:name="com.dongguk.donggukalertapp.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -2,15 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/air_poll"
-        android:title="대기오염"
-        app:showAsAction="always"
-        android:icon="@drawable/air_po_32"/>
+    <!-- 툴바 날씨  및 대기오염 -->
+<!--    <item android:id="@+id/air_poll"-->
+<!--        android:title="대기오염"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/air_po_32"/>-->
 
-    <item android:id="@+id/weather"
-        android:title="날씨"
-        app:showAsAction="always"
-        android:icon="@drawable/whether_blue"/>
+<!--    <item android:id="@+id/weather"-->
+<!--        android:title="날씨"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/whether_blue"/>-->
 
     <group android:id="@+id/setting"
         android:title=""

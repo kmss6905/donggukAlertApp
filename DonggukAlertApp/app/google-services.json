@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:412502079655:android:440e0a3425e86250b04382",
         "android_client_info": {
-          "package_name": "com.example.donggukalertapp"
+          "package_name": "com.dongguk.donggukalertapp"
         }
       },
       "oauth_client": [
@@ -39,7 +39,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:412502079655:android:5273fe6c8d267308b04382",
         "android_client_info": {
-          "package_name": "com.example.fcm_example"
+          "package_name": "com.dongguk.fcm_example"
         }
       },
       "oauth_client": [

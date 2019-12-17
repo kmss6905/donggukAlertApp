@@ -38,16 +38,16 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/weather_notice_header"
-        app:layout="@layout/preferences_category">
-        <SwitchPreferenceCompat
-            app:key="weather"
-            app:title="@string/weather_notice_title"
-            app:summaryOff="@string/attachemt_weather_notice_title_keyword_off"
-            app:summaryOn="@string/attachemt_weather_notice_title_keyword_on"
-            app:enabled="true"
-            app:defaultValue="true"/>
-    </PreferenceCategory>
+<!--    <PreferenceCategory app:title="@string/weather_notice_header"-->
+<!--        app:layout="@layout/preferences_category">-->
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="weather"-->
+<!--            app:title="@string/weather_notice_title"-->
+<!--            app:summaryOff="@string/attachemt_weather_notice_title_keyword_off"-->
+<!--            app:summaryOn="@string/attachemt_weather_notice_title_keyword_on"-->
+<!--            app:enabled="true"-->
+<!--            app:defaultValue="true"/>-->
+<!--    </PreferenceCategory>-->
 
     <PreferenceCategory app:title="@string/version_information_header"
         app:layout="@layout/preferences_category">
@@ -55,8 +55,15 @@
             app:title="@string/version_information_title"
             app:summary="@string/version_information_title_summary"/>
 
+    </PreferenceCategory>
 
+    <!-- 라이센스 고지 -->
+    <PreferenceCategory app:title="@string/license_information"
+        app:layout="@layout/preferences_category">
 
+        <Preference
+            app:title="@string/license_information"
+            app:key="license"/>
     </PreferenceCategory>
 
 

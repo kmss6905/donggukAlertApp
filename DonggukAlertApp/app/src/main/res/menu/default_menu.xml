@@ -2,30 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/air_poll"
-        android:title="대기오염"
-        app:showAsAction="always"
-        android:icon="@drawable/air_po_32"/>
+<!--    <item android:id="@+id/air_poll"-->
+<!--        android:title="대기오염"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/air_po_32"/>-->
 
-    <item android:id="@+id/weather"
-        android:title="날씨"
-        app:showAsAction="always"
-        android:icon="@drawable/whether"/>
+<!--    <item android:id="@+id/weather"-->
+<!--        android:title="날씨"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/whether"/>-->
 
-    <group android:id="@+id/setting"
-        android:title=""
-        app:showAsAction="always"
-        android:icon="@mipmap/outline_info_black_24">
+<!--    <group android:id="@+id/setting"-->
+<!--        android:title=""-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@mipmap/outline_info_black_24">-->
 
-        <item android:id="@+id/setting_setting"
-            android:title="설정"
-            app:showAsAction="never"/>
+<!--        <item android:id="@+id/setting_setting"-->
+<!--            android:title="설정"-->
+<!--            app:showAsAction="never"/>-->
 
-        <item android:id="@+id/setting_like"
-            android:title="관심사 목록"
-            app:showAsAction="never"/>
+<!--        <item android:id="@+id/setting_like"-->
+<!--            android:title="관심사 목록"-->
+<!--            app:showAsAction="never"/>-->
 
-    </group>
+<!--    </group>-->
 
 
 
