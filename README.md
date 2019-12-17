@@ -16,11 +16,6 @@
 </div>
 
 
-![list](./Asset/list.jpg)![addword](./Asset/content.jpg)![addword](./Asset/addword.jpg)![alarm](./Asset/alarm.jpg)![setting](./Asset/setting.jpg)
-
-
-
-
 
 
 ## license
